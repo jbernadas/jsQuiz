@@ -1,14 +1,19 @@
+// Quiz questions and its respective answers
 var quiz = [
   ['How much is 35 + 35?', 70],
   ['What is the capital of Russia?', 'Moscow'],
   ['What year did Magellan discover the Philippines?', 1521],
   ['Full name of inventor of the telephone?', 'Alexander Graham Bell'],
-  ['When was the year the American Declaration of Independence signed?', 1721],
-  ['Who sang Billie Jean?', 'Michael Jackson']
+  // ['When was the year the American Declaration of Independence signed?', 1721],
+  // ['Who sang Billie Jean?', 'Michael Jackson'],
+  // ['What is the capital of Kyrgystan?', 'Bishkek'],
+  // ['What is the monetary unit of France?', 'Euro'],
+  // ['What is the capital of Jamaica?', 'Kingston'],
+  // ['What is the name of the deepest fresh water lake in the world?', 'Baikal']
 ];
 
 // The percentage needed to pass this quiz. Change this to whatever percentage you want.
-var passingPercentage = 50; 
+var passingPercentage = 70; 
 
 // ************ You don't need to change anything below this. *************//
 
@@ -26,6 +31,11 @@ var htmlList = '<ol>';
 // Calculates the passing score
 var passing = quiz.length * (passingPercentage / 100) ;
 
+// Shortcut method for printing out messages
+function print(message) {
+  document.write(message);
+}
+
 // Gives the messages for pass or fail
 var passingScore = function() {
   if (correctCount === quiz.length) {
@@ -36,11 +46,6 @@ var passingScore = function() {
   } else {
     print('<span class=\'red\'>Sorry, you failed to pass the test!</span>');
   }
-}
-
-// Shortcut method for printing out messages
-function print(message) {
-  document.write(message);
 }
 
 // Loops through question and temporarily stores it as user input and pushes it to the array
