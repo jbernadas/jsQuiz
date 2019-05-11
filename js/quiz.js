@@ -1,19 +1,25 @@
-// Quiz questions and its respective answers
-var quiz = [
-  ['How much is 35 + 35?', 70],
-  ['What is the capital of Russia?', 'Moscow'],
-  ['What year did Magellan discover the Philippines?', 1521],
-  ['Full name of inventor of the telephone?', 'Alexander Graham Bell'],
-  // ['When was the year the American Declaration of Independence signed?', 1721],
-  // ['Who sang Billie Jean?', 'Michael Jackson'],
-  // ['What is the capital of Kyrgystan?', 'Bishkek'],
-  // ['What is the monetary unit of France?', 'Euro'],
-  // ['What is the capital of Jamaica?', 'Kingston'],
-  // ['What is the name of the deepest fresh water lake in the world?', 'Baikal']
-];
-
-// The percentage needed to pass this quiz. Change this to whatever percentage you want.
+// The percentage needed to pass this quiz. Change this to whatever passing percentage you want.
 var passingPercentage = 70; 
+
+// Quiz questions and its respective answers. You can add more to the below list of questions and answers.
+var quiz = [
+  { 
+    question: 'How much is 35 + 35?', 
+    answer: 70
+  },
+  {
+    question: 'What is the capital of Russia?', 
+    answer: 'Moscow'
+  },
+  {
+    question: 'What year did Magellan discover the Philippines?', 
+    answer: 1521
+  },
+  {
+    question: 'Full name of inventor of the telephone?', 
+    answer: 'Alexander Graham Bell'
+  }
+];
 
 // ************ You don't need to change anything below this. *************//
 
@@ -50,13 +56,13 @@ var passingScore = function() {
 
 // Loops through question and temporarily stores it as user input and pushes it to the array
 for (var i = 0; i < quiz.length; i += 1) {  
-  userInput = prompt(quiz[i][0]);
+  userInput = prompt(quiz[i]['question']);
   userAnswerList.push(userInput);
 }
 
 // Checks the user's answer against ours
 for (var j = 0; j < quiz.length; j += 1) {
-  if (userAnswerList[j] === quiz[j][1].toString()) {
+  if (userAnswerList[j] === quiz[j]['answer'].toString()) {
     validateCorrect.push(true);
   } else {
     validateCorrect.push(false);
@@ -72,7 +78,7 @@ for (var k = 0; k < validateCorrect.length; k += 1) {
 
 // Print out question and user answer
 for (var l = 0; l < quiz.length; l++){
-  htmlList += '<li> ' + quiz[l][0] + ' Your aswer: ' + userAnswerList[l] + (validateCorrect[l] === true ? ' <span class=\'green\'>(Correct)</span> ' : ' <span class=\'red\'>(Wrong)</span> ') + '</li><br/>';
+  htmlList += '<li> ' + quiz[l]['question'] + ' Your aswer: ' + userAnswerList[l] + (validateCorrect[l] === true ? ' <span class=\'green\'>(Correct)</span> ' : ' <span class=\'red\'>(Wrong)</span> ') + '</li><br/>';
 }
 
 // Showtime
