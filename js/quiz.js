@@ -48,9 +48,9 @@ var passingScore = function() {
     print('<span class=\'green\'>Congratulations! You received a perfect score!</span>');
   }
   else if (correctCount >= Math.round(passing)) {
-    print('<span class=\'green\'>Congratulations! You passed the test!</span>');
+    print('<span class=\'green\'>Congratulations! You passed this quiz!</span>');
   } else {
-    print('<span class=\'red\'>Sorry, you failed to pass the test!</span>');
+    print('<span class=\'red\'>Sorry, you failed to pass this quiz!</span>');
   }
 }
 
